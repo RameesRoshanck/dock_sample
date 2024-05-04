@@ -21,6 +21,12 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Install Node.js dependencies
+      run: npm install
+
+    - name: Run Server Code
+      run: node server.js 
     
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
