@@ -29,13 +29,14 @@ jobs:
       run: node server.js 
       
     - name: Build and push Docker image
-      if: ${{ success() }}
+      if: ${{ success() && always() }}
       uses: docker/build-push-action@v3
       with:
         context: .
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/docker-sample:main-${{ github.run_number }}
+
 
 
 
