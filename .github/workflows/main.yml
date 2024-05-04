@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Install Node.js dependencies
-      run: npm install
+      run: npm install 
 
     - name: Run Server Code
       run: node server.js 
